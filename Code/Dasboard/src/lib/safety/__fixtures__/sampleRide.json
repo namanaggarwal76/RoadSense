@@ -1,0 +1,8 @@
+[
+  {"timestamp":"2025-01-01 10:00:00.000","accel_x":"0.2","accel_y":"0.1","accel_z":"0.0","angular_x":"0","angular_y":"0","angular_z":"0.1","latitude":"0","longitude":"0","speed":"30","speed_limit":"30","warnings":""},
+  {"timestamp":"2025-01-01 10:00:01.000","accel_x":"0.1","accel_y":"0.1","accel_z":"0.0","angular_x":"0","angular_y":"0","angular_z":"0.2","latitude":"0","longitude":"0","speed":"32","speed_limit":"30","warnings":"Overspeeding"},
+  {"timestamp":"2025-01-01 10:00:02.000","accel_x":"-3.0","accel_y":"0.1","accel_z":"0.0","angular_x":"0","angular_y":"0","angular_z":"0.1","latitude":"0","longitude":"0","speed":"28","speed_limit":"30","warnings":"Harsh Braking"},
+  {"timestamp":"2025-01-01 10:00:03.000","accel_x":"2.7","accel_y":"0.2","accel_z":"0.1","angular_x":"0","angular_y":"0","angular_z":"0.6","latitude":"0","longitude":"0","speed":"33","speed_limit":"30","warnings":"Sudden Accel,Speedy Turns"},
+  {"timestamp":"2025-01-01 10:00:04.000","accel_x":"0.0","accel_y":"0.2","accel_z":"0.2","angular_x":"0","angular_y":"0","angular_z":"0.2","latitude":"0","longitude":"0","speed":"29","speed_limit":"30","warnings":"Bump"},
+  {"timestamp":"2025-01-01 10:00:05.000","accel_x":"0.0","accel_y":"0.1","accel_z":"0.2","angular_x":"0","angular_y":"0","angular_z":"0.2","latitude":"0","longitude":"0","speed":"29","speed_limit":"30","warnings":""}
+]
