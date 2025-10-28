@@ -1,0 +1,36 @@
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "wheeler-event-detection",
+          "appId": "1:220656898723:android:caa95b50b2c1f7ca20a516",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "wheeler-event-detection",
+          "configurations": {
+            "android": "1:220656898723:android:caa95b50b2c1f7ca20a516",
+            "web": "1:220656898723:web:42544ab4f0d20e4d20a516"
+          }
+        }
+      }
+    }
+  },
+  "hosting": {
+    "public": "build/web",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
