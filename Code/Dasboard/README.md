@@ -1,9 +1,8 @@
-# 🚗 GeoDriver - Fleet Management Dashboard
+# GeoDriver - Fleet Management Dashboard
 
 A real-time fleet management dashboard for monitoring two-wheeler ride data with GPS tracking, speed analysis, and acceleration monitoring. Built for the **Wheeler Event Detection** project.
 
 [Live Link](https://geo-driver-qmbzvaagu-namanaggarwal76s-projects.vercel.app/)
-
 
 ![React](https://img.shields.io/badge/React-18.3.1-blue)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.8.3-blue)
@@ -11,7 +10,7 @@ A real-time fleet management dashboard for monitoring two-wheeler ride data with
 ![Vite](https://img.shields.io/badge/Vite-5.4.19-purple)
 ![Leaflet](https://img.shields.io/badge/Leaflet-1.9.4-green)
 
-## 🎯 Overview
+## Overview
 
 GeoDriver is a read-only dashboard application designed to visualize and analyze two-wheeler ride data collected from IoT sensors. The application provides real-time monitoring of:
 
@@ -20,9 +19,10 @@ GeoDriver is a read-only dashboard application designed to visualize and analyze
 - **Acceleration Monitoring** - G-force analysis for hard braking, acceleration, and sharp turns
 - **Fleet Management** - Multi-user and multi-ride support
 
-## ✨ Features
+## Features
 
-### 🗺️ Interactive Map View
+### Interactive Map View
+
 - **Leaflet Integration** with OpenStreetMap tiles (free, no API key required)
 - Real-time GPS route visualization with polylines
 - Start and end point markers
@@ -30,54 +30,62 @@ GeoDriver is a read-only dashboard application designed to visualize and analyze
 - Auto-zoom to fit entire route
 - Pan and zoom controls
 
-### 📊 Speed Chart
+### Speed Chart
+
 - Speed vs sample index visualization
 - Speed limit overlay with highlighted violations
 - Real-time violation counter
 - Max speed display
 - Interactive tooltips with time and speed details
 
-### 📈 Acceleration Chart
+### Acceleration Chart
+
 - 3-axis acceleration data (X, Y, Z) converted to m/s²
 - Hard acceleration detection (>3 m/s²)
 - Hard braking detection (<-2 m/s²)
 - Sharp turn detection (lateral acceleration >2 m/s²)
 - Event counters and markers
 
-### 👥 Fleet Management
+### Fleet Management
+
 - Multi-user support
 - Multiple rides per user
 - Real-time data synchronization
 - Firebase Realtime Database integration
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 ### Frontend Framework
+
 - **React 18.3.1** - UI library
 - **TypeScript 5.8.3** - Type safety
 - **Vite 5.4.19** - Build tool and dev server
 
 ### UI Components
+
 - **shadcn/ui** - Component library based on Radix UI
 - **Tailwind CSS 3.4.17** - Utility-first CSS framework
 - **Lucide React** - Icon library
 - **Recharts 2.15.4** - Charting library
 
 ### Mapping
+
 - **Leaflet 1.9.4** - Interactive maps
 - **React-Leaflet 4.2.1** - React wrapper for Leaflet
 - **OpenStreetMap** - Free tile provider
 
 ### Backend
+
 - **Firebase 12.2.1** - Realtime Database
 - **Firebase Realtime Database** - Data storage and sync
 
 ### Development Tools
+
 - **ESLint** - Code linting
 - **TypeScript ESLint** - TypeScript-specific linting
 - **PostCSS & Autoprefixer** - CSS processing
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 geo-driver/
@@ -118,7 +126,7 @@ geo-driver/
 └── components.json                      # shadcn/ui config
 ```
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -129,17 +137,19 @@ geo-driver/
 ### Installation
 
 1. **Install dependencies**
+
    ```bash
    npm install
    ```
 
 2. **Start development server**
+
    ```bash
    npm run dev
    ```
 
 3. **Open in browser**
-   
+
    Navigate to `http://localhost:8080`
 
 ## 🗄️ Firebase Data Schema
@@ -200,15 +210,17 @@ The application follows this Firebase Realtime Database structure:
 ### Data Parsing
 
 The application automatically:
+
 - Converts acceleration from g-force to m/s² (multiplies by 9.80665)
 - Parses timestamps to milliseconds since epoch
 - Converts string values to numbers for calculations
 - Flags speed violations when `speed > speed_limit`
 - Calculates total acceleration magnitude
 
-## 📊 Dashboard Components
+## Dashboard Components
 
 ### 1. Sidebar Component
+
 **Location:** `src/components/dashboard/Sidebar.tsx`
 
 - User selection dropdown
@@ -217,9 +229,11 @@ The application automatically:
 - Collapsible sidebar for mobile
 
 ### 2. Map View Component
+
 **Location:** `src/components/dashboard/MapView.tsx`
 
 **Features:**
+
 - OpenStreetMap tile layer (free, no API key)
 - Route polyline visualization
 - Start/end markers
@@ -228,6 +242,7 @@ The application automatically:
 - Auto-zoom to route bounds
 
 **Configuration:**
+
 ```tsx
 // Change tile provider in MapView.tsx
 <TileLayer
@@ -238,6 +253,7 @@ The application automatically:
 ```
 
 ### 3. Speed Chart Component
+
 **Location:** `src/components/dashboard/SpeedChart.tsx`
 
 - Line chart showing speed over sample index
@@ -247,6 +263,7 @@ The application automatically:
 - Max speed indicator
 
 ### 4. Acceleration Chart Component
+
 **Location:** `src/components/dashboard/AccelerationChart.tsx`
 
 - Dual-axis acceleration (X and Y)
@@ -258,6 +275,7 @@ The application automatically:
 - Event counters
 
 ### 5. Warnings List Component
+
 **Location:** `src/components/dashboard/WarningsList.tsx`
 
 - Chronological list of violations
@@ -265,11 +283,12 @@ The application automatically:
 - Acceleration events
 
 ### 6. Safety Scoring Module
+
 **Location:** `src/lib/safety/` & UI demo at route `/safety`.
 
 Implements per-ride safety scoring with:
-* Proportional penalties: `(count/total_rows)*weight` per warning.
-* Bump/Pothole contextual window penalties + clean handling bonus.
-* Positive bonus for good rows (smooth + no warnings).
-* Continuous overspeed severity scaling.
-* Stars (0–5, 0.5 increments) from final score.
+- Proportional penalties: `(count/total_rows)*weight` per warning.
+- Bump/Pothole contextual window penalties + clean handling bonus.
+- Positive bonus for good rows (smooth + no warnings).
+- Continuous overspeed severity scaling.
+- Stars (0–5, 0.5 increments) from final score.
